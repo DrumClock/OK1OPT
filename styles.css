@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 { 
-  color:#32cd32; 
+  color: #32cd32; 
 }
 
 /* Header */
@@ -114,7 +114,7 @@ footer {
   line-height: 40px;
 }
 
-/* Styly pro projekty (z technika_2.html) */
+/* Styly pro projekty (z technika.html) */
 .project {
   background-color: rgba(255,255,255,0.05);
   border: 1px solid #333;
@@ -163,4 +163,9 @@ footer {
   .middle {
     left: 0;
   }
+}
+
+.bold-black {
+  font-weight: bold;
+  color: black;
 }
