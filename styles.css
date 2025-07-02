@@ -141,12 +141,13 @@ footer {
 }
 
 .project img {
-  max-width: 100%;
-  height: auto;
-  max-height: 300px;
+  width: 190px;           /* pevná šířka */
+  height: 270px;          /* pevná výška */
+  object-fit: cover;      /* zachová proporce */
   border-radius: 4px;
-  margin-top: 10px;
   box-shadow: 0 0 8px rgba(0,0,0,0.6);
+  flex-shrink: 0;
+}
 }
 
 .project h3 {
