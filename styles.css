@@ -120,6 +120,11 @@ footer {
   text-align: left;
 }
 
+.bold-CAL {
+  font-weight: bold;
+  color: #40e0d0;
+}
+
 .centered-table {
   margin-left: auto;
   margin-right: auto;
@@ -150,18 +155,21 @@ footer {
 }
 
 /* Responsivní design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   nav {
-    display: none;
-    position: fixed;
-    top: 120px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    bottom: auto;
-    background-color: rgba(0,0,0,0.9);
-    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
+
+  nav a {
+    display: block;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+}
 
   nav.active {
     display: block;
@@ -176,7 +184,3 @@ footer {
   }
 }
 
-.bold-black {
-  font-weight: bold;
-  color: #40e0d0;
-}
