@@ -50,6 +50,11 @@
       nav.classList.toggle("active");
     }
 
+    function closeMenu() {
+      const nav = document.getElementById("menu");
+      nav.classList.remove("active");
+    }
+
     function loadContent(url, link) {
       fetch(url)
         .then(res => res.text())
@@ -57,11 +62,39 @@
           document.getElementById("content").innerHTML = html;
           document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
           if (link) link.classList.add("active");
+          
+          // Automaticky zavřít menu po načtení obsahu (pouze na mobilu)
+          if (window.innerWidth <= 768) {
+            closeMenu();
+          }
         })
         .catch(() => {
           document.getElementById("content").innerHTML = "<p style='color:red'>Chyba při načítání.</p>";
+          
+          // Zavřít menu i při chybě
+          if (window.innerWidth <= 768) {
+            closeMenu();
+          }
         });
     }
+
+    // Zavřít menu při kliknutí mimo něj (volitelné)
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById("menu");
+      const menuToggle = document.querySelector(".menu-toggle");
+      
+      // Pokud klikneme mimo menu a mimo tlačítko menu
+      if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    // Zavřít menu při změně velikosti okna z mobilu na desktop
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
   </script>
 
 </body>
