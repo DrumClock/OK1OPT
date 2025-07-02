@@ -142,12 +142,32 @@ footer {
 
 .project img {
   width: 190px;           /* pevná šířka */
-  height: 270px;          /* pevná výška */
+  height: 390px;          /* pevná výška */
   object-fit: cover;      /* zachová proporce */
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0,0,0,0.6);
   flex-shrink: 0;
 }
+}
+
+
+/* Styly pro (z clenove_klubu.html) */
+.operator {
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
+.operator img {
+  width: 190px;           /* pevná šířka */
+  height: 270px;          /* pevná výška */
+  object-fit: cover;      /* zachová proporce */
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+  flex-shrink: 0;
 }
 
 .project h3 {
