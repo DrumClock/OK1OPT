@@ -114,7 +114,6 @@ footer {
   line-height: 40px;
 }
 
-
 /* Styly pro závody ( zavody.html) */
 .zavod {  
   text-align: left;
@@ -159,13 +158,14 @@ footer {
   nav {
     display: none;
     position: fixed;
-    top: 120px;
+    top: 120px; /* menu začíná pod headerem s tlačítkem */
     left: 0;
     right: 0;
     width: 100%;
     bottom: auto;
     background-color: rgba(0,0,0,0.9);
     z-index: 999;
+    max-height: calc(100vh - 160px); /* omezí výšku menu */
   }
 
   nav.active {
@@ -178,5 +178,11 @@ footer {
 
   .middle {
     left: 0;
+    top: 120px; /* KLÍČOVÁ OPRAVA: hlavní obsah začíná až pod menu tlačítkem */
+  }
+  
+  /* Když je menu otevřené, posuň obsah ještě níž */
+  nav.active ~ .middle {
+    top: calc(120px + 200px); /* přizpůsobte podle výšky vašeho menu */
   }
 }
