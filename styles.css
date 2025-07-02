@@ -1,21 +1,30 @@
 /* Reset a základní styly */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
   background-color: #000;
+  background-image: none;
   color: #fff;
 }
 
 /* Nadpisy */
-h1 { color: yellow; }
-h2 { color: #da70d6; }
-h3 { color: #32cd32; }
+h1 { 
+  color: yellow; 
+}
+
+h2 { 
+  color: #da70d6; 
+}
+
+h3 { 
+  color: #32cd32; 
+}
 
 /* Header */
 header {
@@ -29,29 +38,28 @@ header {
   z-index: 1000;
 }
 
-/* Tlačítko menu */
+/* Menu toggle button */
 .menu-toggle {
   display: none;
-  background: black;
-  color: white;
-  border: 1px solid white;
-  padding: 5px 10px;
   margin-top: 10px;
+  background: none;
+  color: white;
+  border: 2px solid white;
+  padding: 8px 14px;
   font-size: 16px;
   cursor: pointer;
 }
 
 /* Navigace */
 nav {
-  display: none;
-  flex-direction: column;
-  background: #222;
-  padding: 10px;
-  position: absolute;
-  top: 100px; /* pod hlavičku */
+  position: fixed;
+  top: 100px;
   left: 0;
-  width: 100%;
-  z-index: 999;
+  bottom: 40px;
+  width: 200px;
+  background-color: rgba(255,255,255,0.1);
+  padding: 20px;
+  overflow-y: auto;
 }
 
 nav a {
@@ -63,8 +71,9 @@ nav a {
   cursor: pointer;
 }
 
-nav.active {
-  display: block;
+nav a.active {
+  color: yellow;
+  background-color: rgba(255,255,255,0.2);
 }
 
 /* Hlavní obsah */
@@ -75,11 +84,10 @@ nav.active {
   right: 0;
   bottom: 40px;
   background: url('pozadi.jpg') top left / 100% 100% no-repeat;
-  padding-top: 120px; /* rezerva pro menu */
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0,0,0,0.6);
   width: 100%;
   height: 100%;
   overflow-y: auto;
@@ -106,8 +114,9 @@ footer {
   line-height: 40px;
 }
 
-/* Styly pro závody */
-.zavod {
+
+/* Styly pro závody ( zavody.html) */
+.zavod {  
   text-align: left;
 }
 
@@ -121,7 +130,7 @@ footer {
   margin-right: auto;
 }
 
-/* Styly pro projekty */
+/* Styly pro projekty (z technika.html) */
 .project {
   background-color: rgba(255,255,255,0.05);
   border: 1px solid #333;
@@ -145,20 +154,30 @@ footer {
   margin-bottom: 10px;
 }
 
-/* Responsivní design pro mobilní zařízení */
+/* Responsivní design */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: inline-block;
-  }
-
   nav {
-    top: 90px;
+    display: none;
+    position: fixed;
+    top: 120px;
     left: 0;
     right: 0;
+    width: 100%;
+    bottom: auto;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 999;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .middle {
     left: 0;
-    padding-top: 140px; /* více místa pod mobilním menu */
   }
 }
+
