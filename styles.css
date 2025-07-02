@@ -130,7 +130,7 @@ footer {
 }
 
 /* Styly pro projekty (z technika.html) */
-.project {
+.project {Add commentMore actions
   background-color: rgba(255,255,255,0.05);
   border: 1px solid #333;
   border-radius: 8px;
@@ -141,13 +141,16 @@ footer {
 }
 
 .project img {
-  width: 190px;           /* pevná šířka */
-  height: 390px;          /* pevná výška */
-  object-fit: cover;      /* zachová proporce */
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
   border-radius: 4px;
+  margin-top: 10px;
   box-shadow: 0 0 8px rgba(0,0,0,0.6);
-  flex-shrink: 0;
 }
+
+.project h3 {
+  margin-bottom: 10px;
 }
 
 
@@ -170,9 +173,6 @@ footer {
   flex-shrink: 0;
 }
 
-.project h3 {
-  margin-bottom: 10px;
-}
 
 /* Responsivní design */
 @media (max-width: 768px) {
