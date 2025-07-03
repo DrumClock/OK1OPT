@@ -183,10 +183,11 @@ footer {
   transform: translateX(-50%);
   width: 190px;
   height: 270px;
-  object-fit: contain;
+  object-fit: fill;        /* roztáhne na celou oblast */
   pointer-events: none;
   box-shadow: none;
 }
+
 
 .operator-content {
   margin-top: 15px;    /* odstup od obrázku */
