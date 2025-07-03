@@ -15,18 +15,29 @@
   </header>
 
   <nav id="menu">
+  
     <div class="nav-item has-submenu">
       <a href="#" onclick="toggleSubmenu(event, this)">Členové</a>
       <div class="submenu">
         <a href="#" onclick="loadContent('clenove_soucasni.html', this)">Současní</a>
-        <a href="#" onclick="loadContent('clenove_silent_key.html', this)">Silent Key</a>
-        <a href="#" onclick="loadContent('clenove_byvali.html', this)">Bývalí</a>
+        <a href="#" class="disabled" onclick="loadContent('clenove_silent_key.html', this)">Silent Key</a>
+        <a href="#" class="disabled" onclick="loadContent('clenove_byvali.html', this)">Bývalí</a>
       </div>
     </div>
     <a href="#" onclick="loadContent('foto.html', this)">Fotogalerie</a>
     <a href="#" class="disabled" onclick="loadContent('historie.html', this)">Historie</a>
     <a href="#" onclick="loadContent('technika.html', this)">Technika</a>
-    <a href="#" onclick="loadContent('zavody.html', this)">Závody</a>
+	
+	
+	<div class="nav-item has-submenu">
+      <a href="#" onclick="toggleSubmenu(event, this)">Závody</a>
+      <div class="submenu">
+        <a href="#" onclick="loadContent('zavody_2025.html', this)">2025</a>
+		<a href="#" class="disabled" onclick="loadContent('zavody_2024.html', this)">2024</a>
+		<a href="#" class="disabled" onclick="loadContent('zavody_2023.html', this)">2023</a>	    
+      </div>
+    </div>
+		
     <a href="#" class="disabled" onclick="loadContent('video.html', this)">Video</a>
     <a href="#" class="disabled" onclick="loadContent('kontakt.html', this)" >Kontakt</a>
   </nav>
