@@ -15,10 +15,14 @@
   </header>
 
   <nav id="menu">
-    <!-- <a href="#" onclick="loadContent('ol70amyd.html', this)"><img src="img/flag.gif" width="32" height="17"> OL70AMYD</a>
-    <a href="#" onclick="loadContent('let.html', this)"><img src="img/flag1.gif" width="32" height="17"> OL70AMYD</a>
-	-->
-    <a href="#" onclick="loadContent('clenove_klubu.html', this)">Členové</a>
+    <div class="nav-item has-submenu">
+      <a href="#" onclick="toggleSubmenu(event, this)">Členové</a>
+      <div class="submenu">
+        <a href="#" onclick="loadContent('clenove_soucasni.html', this)">Současní</a>
+        <a href="#" onclick="loadContent('clenove_silent_key.html', this)">Silent Key</a>
+        <a href="#" onclick="loadContent('clenove_byvali.html', this)">Bývalí</a>
+      </div>
+    </div>
     <a href="#" onclick="loadContent('foto.html', this)">Fotogalerie</a>
     <a href="#" class="disabled" onclick="loadContent('historie.html', this)">Historie</a>
     <a href="#" onclick="loadContent('technika.html', this)">Technika</a>
@@ -40,11 +44,9 @@
     </div>
   </div>
 
-
   <footer>
     &copy; 2025 Radioklub OK1OPT – Designed OK1MFG
   </footer>
-
 
   <script>
     function toggleMenu() {
@@ -55,6 +57,28 @@
     function closeMenu() {
       const nav = document.getElementById("menu");
       nav.classList.remove("active");
+      
+      // Zavřít všechna submenu
+      document.querySelectorAll('.has-submenu').forEach(item => {
+        item.classList.remove('submenu-active');
+      });
+    }
+
+    function toggleSubmenu(event, link) {
+      event.preventDefault();
+      
+      const parent = link.closest('.has-submenu');
+      const isActive = parent.classList.contains('submenu-active');
+      
+      // Zavřít všechna ostatní submenu
+      document.querySelectorAll('.has-submenu').forEach(item => {
+        if (item !== parent) {
+          item.classList.remove('submenu-active');
+        }
+      });
+      
+      // Přepnout aktuální submenu
+      parent.classList.toggle('submenu-active', !isActive);
     }
 
     function loadContent(url, link) {
@@ -80,7 +104,7 @@
         });
     }
 
-    // Zavřít menu při kliknutí mimo něj (volitelné)
+    // Zavřít menu při kliknutí mimo něj
     document.addEventListener('click', function(event) {
       const nav = document.getElementById("menu");
       const menuToggle = document.querySelector(".menu-toggle");
