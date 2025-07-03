@@ -178,14 +178,13 @@ footer {
 
 .operator .overlay {
   position: absolute;
-  top: 15px;           /* padding kontejneru */
-  left: 50%;           /* vystředění horizontálně */
-  transform: translateX(-50%);  /* dokončení vycentrování */
-  width: 190px;        /* stejná šířka jako hlavní obrázek */
-  height: 270px;       /* stejná výška jako hlavní obrázek */
-  object-fit: contain;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* nebo cover, podle potřeby */
   pointer-events: none;
-  box-shadow: none;
+  box-shadow: none; /* overlay nebude mít stín */  
 }
 
 .operator-content {
