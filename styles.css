@@ -156,7 +156,7 @@ footer {
 
 /* Styly pro clenove_klubu.html */
 
-.operator {Add commentMore actions
+.operator {
   background-color: rgba(255,255,255,0.05);
   border: 1px solid #333;
   border-radius: 8px;
@@ -178,14 +178,18 @@ footer {
 
 .operator .overlay {
   position: absolute;
-  top: 15px;    /* padding kontejneru */
-  left: 50%;    /* vystředění */
-  transform: translateX(-50%);
-  width: 190px; /* stejná velikost jako obrázek */
-  height: 270px;
+  top: 15px;           /* padding kontejneru */
+  left: 50%;           /* vystředění horizontálně */
+  transform: translateX(-50%);  /* dokončení vycentrování */
+  width: 190px;        /* stejná šířka jako hlavní obrázek */
+  height: 270px;       /* stejná výška jako hlavní obrázek */
   object-fit: contain;
   pointer-events: none;
   box-shadow: none;
+}
+
+.operator-content {
+  margin-top: 15px;    /* odstup od obrázku */
 }
 
 
