@@ -66,6 +66,7 @@
 
     function toggleSubmenu(event, link) {
       event.preventDefault();
+      event.stopPropagation();
       
       const parent = link.closest('.has-submenu');
       const isActive = parent.classList.contains('submenu-active');
@@ -78,7 +79,11 @@
       });
       
       // Přepnout aktuální submenu
-      parent.classList.toggle('submenu-active', !isActive);
+      if (isActive) {
+        parent.classList.remove('submenu-active');
+      } else {
+        parent.classList.add('submenu-active');
+      }
     }
 
     function loadContent(url, link) {

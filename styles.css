@@ -235,6 +235,7 @@ nav a.disabled {
   text-align: center;
 }
 
+
 /* Přidat na konec styles.css */
 
 /* Submenu styly */
@@ -253,13 +254,15 @@ nav a.disabled {
   transform: rotate(180deg);
 }
 
+/* KLÍČOVÁ OPRAVA: Submenu je ve výchozím stavu skryté */
 .submenu {
-  display: none;
-  background-color: rgba(0,0,0,0.8);
+  display: none !important;
+  background-color: rgba(0,0,0,0.9);
   border-left: 3px solid #40e0d0;
-  margin-left: 10px;
+  margin-left: 15px;
   padding-left: 10px;
   margin-top: 5px;
+  border-radius: 4px;
 }
 
 .submenu a {
@@ -281,14 +284,15 @@ nav a.disabled {
   border-left-color: yellow;
 }
 
+/* Zobrazit submenu pouze při aktivaci */
 .has-submenu.submenu-active .submenu {
-  display: block;
+  display: block !important;
 }
 
 /* Desktop hover efekt */
 @media (min-width: 769px) {
   .has-submenu:hover .submenu {
-    display: block;
+    display: block !important;
   }
   
   .has-submenu:hover > a::after {
@@ -303,7 +307,7 @@ nav a.disabled {
     padding-left: 15px;
     border-left: none;
     border-top: 1px solid #333;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.95);
   }
   
   .submenu a {
