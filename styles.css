@@ -178,12 +178,12 @@ footer {
 
 .operator .overlay {
   position: absolute;
-  top: 15px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 190px;
-  height: 270px;
-  object-fit: fill;         
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 250px;
+  height: 20px;
+  background-color: rgba(0,0,0,0.8);
   pointer-events: none;
   box-shadow: none;
 }
