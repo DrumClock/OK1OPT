@@ -176,19 +176,6 @@ footer {
   flex-shrink: 0;
 }
 
-.operator .overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  width: 250px;
-  height: 20px;
-  background-color: rgba(0,0,0,0.8);
-  pointer-events: none;
-  box-shadow: none;
-}
-
-
 .operator-content {
   margin-top: 15px;    /* odstup od obrázku */
 }
