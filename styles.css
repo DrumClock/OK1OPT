@@ -167,7 +167,7 @@ footer {
   position: relative;
 }
 
-.operator img {
+.operator img:not(.overlay) {  /* pouze hlavní obrázek */
   width: 190px;
   height: 270px;
   object-fit: cover;
@@ -178,13 +178,14 @@ footer {
 
 .operator .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 190px;
   height: 270px;
-  object-fit: contain;  /* nebo cover, podle potřeby */
+  object-fit: contain;
   pointer-events: none;
-  box-shadow: none;   /* overlay nebude mít stín */  
+  box-shadow: none;
 }
 
 .operator-content {
